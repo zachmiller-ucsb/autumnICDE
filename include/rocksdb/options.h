@@ -211,7 +211,7 @@ struct ColumnFamilyOptions : public AdvancedColumnFamilyOptions {
   // - For all others, we do not specify a compression level
   //
   // Dynamically changeable through SetOptions() API
-  CompressionType compression;
+  CompressionType compression = kNoCompression;
 
   // Compression algorithm that will be used for the bottommost level that
   // contain files. The behavior for num_levels = 1 is not well defined.
@@ -863,11 +863,11 @@ struct DBOptions {
 
   // Use O_DIRECT for user and compaction reads.
   // Default: false
-  bool use_direct_reads = false;
+  bool use_direct_reads = true;
 
   // Use O_DIRECT for writes in background flush and compactions.
   // Default: false
-  bool use_direct_io_for_flush_and_compaction = false;
+  bool use_direct_io_for_flush_and_compaction = true;
 
   // If false, fallocate() calls are bypassed, which disables file
   // preallocation. The file space preallocation is used to increase the file
@@ -1888,7 +1888,7 @@ struct CompactionOptions {
   uint32_t max_subcompactions;
 
   CompactionOptions()
-      : compression(kSnappyCompression),
+      : compression(kNoCompression),
         output_file_size_limit(std::numeric_limits<uint64_t>::max()),
         max_subcompactions(0) {}
 };
