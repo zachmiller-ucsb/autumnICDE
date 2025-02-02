@@ -146,7 +146,7 @@ struct BlockBasedTableOptions {
   // each "table reader" object will pre-load index/filter blocks during
   // table initialization. Index and filter partition blocks always use
   // block cache regardless of this option.
-  bool cache_index_and_filter_blocks = false;
+  bool cache_index_and_filter_blocks = true;
 
   // If cache_index_and_filter_blocks is enabled, cache index and filter
   // blocks with high priority. If set to true, depending on implementation of
