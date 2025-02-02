@@ -753,7 +753,7 @@ struct AdvancedColumnFamilyOptions {
   uint64_t hard_pending_compaction_bytes_limit = 256 * 1073741824ull;
 
   // The compaction style. Default: kCompactionStyleLevel
-  CompactionStyle compaction_style = kCompactionStyleLevel;
+  CompactionStyle compaction_style = kCompactionStyleUniversal;
 
   // If level compaction_style = kCompactionStyleLevel, for each level,
   // which files are prioritized to be picked to compact.

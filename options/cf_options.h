@@ -25,7 +25,7 @@ struct ImmutableCFOptions {
   explicit ImmutableCFOptions();
   explicit ImmutableCFOptions(const ColumnFamilyOptions& cf_options);
 
-  CompactionStyle compaction_style;
+  CompactionStyle compaction_style = kCompactionStyleUniversal;
 
   CompactionPri compaction_pri;
 

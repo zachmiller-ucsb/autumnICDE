@@ -635,7 +635,7 @@ class VersionStorageInfo {
   FileIndexer file_indexer_;
   Arena arena_;  // Used to allocate space for file_levels_
 
-  CompactionStyle compaction_style_;
+  CompactionStyle compaction_style_ = kCompactionStyleUniversal;
 
   // List of files per level, files in each level are arranged
   // in increasing order of keys
