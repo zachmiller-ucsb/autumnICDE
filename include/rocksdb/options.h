@@ -863,11 +863,11 @@ struct DBOptions {
 
   // Use O_DIRECT for user and compaction reads.
   // Default: false
-  bool use_direct_reads = true;
+  bool use_direct_reads = false;
 
   // Use O_DIRECT for writes in background flush and compactions.
   // Default: false
-  bool use_direct_io_for_flush_and_compaction = true;
+  bool use_direct_io_for_flush_and_compaction = false;
 
   // If false, fallocate() calls are bypassed, which disables file
   // preallocation. The file space preallocation is used to increase the file
